@@ -1,0 +1,202 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+  <main>
+    <!--Dental location-->
+    <section class="alldepartment__section d-flex justify-content-center">
+        <div class="ad_us_p d-flex justify-content-center align-items-center">
+            <h2 class="du_layar text-capitalize">
+                {{details.department_name}}
+            </h2>
+        </div>
+    </section>
+    <!--Dental location-->
+    <section class="department_discription_section py-5">
+        <div class="container py-5">
+            <h4 class="dds_info text-center text-capitalize w-25 m-auto mb-4">department <span>info</span></h4>
+            <div class="row">
+                <div class="col-lg-9">
+                    <div class="dds_content mb-5">
+                        {% if details.First_title != NULL %}
+                        <h2 class="ddsc_h">
+                            {{details.First_title|safe}}
+                        </h2>
+                        {% endif %}
+                        {% if details.First_content != NULL %}
+                        <p class="ddsc_p">
+                            {{details.First_content |safe}}
+                        </p>
+                        {% endif %}
+                        {% if details.department_image != NULL %}
+                        <img src="/media/{{details.department_image}}" alt="department">
+                        {% endif %}
+                    </div>
+                    <div class="dds_content mb-4">
+                        {% if details.second_title != NULL %}
+                        <h2 class="ddsc_h">{{details.second_title|safe}}</h2>
+                        {% endif %}
+                        {% if details.Second_content != NULL %}
+                        <p class="ddsc_p">
+                            {{details.Second_content | safe}}
+                        </p>
+                        {% endif %}
+                        {% if details.third_title != NULL %}
+                        <h2 class="ddsc_h py-2">
+                            {{details.third_title|safe}}
+                        </h2>
+                        {% endif %}
+                        {% if details.third_content != NULL %}
+                        <p class="ddsc_p">
+                            {{details.third_content|safe}}
+                        </p>
+                        {% endif %}
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col-lg-6">
+                            <ul class="ul">
+                                {% if details.Disease_symptoms_1 != NULL %}
+                                <li>{{details.Disease_symptoms_1|safe}}</li>
+                                {% endif %}
+                                {% if details.Disease_symptoms_2 != NULL %}
+                                <li>{{details.Disease_symptoms_2|safe}}</li>
+                                {% endif %}
+                                {% if details.Disease_symptoms_3 != NULL %}
+                                <li>{{details.Disease_symptoms_3|safe}}</li>
+                                {% endif %}
+                                {% if details.Disease_symptoms_4 != NULL %}
+                                <li>{{details.Disease_symptoms_4|safe}}</li>
+                                {% endif %}
+                                {% if details.Disease_symptoms_5 != NULL %}
+                                <li>{{details.Disease_symptoms_5|safe}}</li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                        <div class="col-lg-6">
+                            <ul class="ul">
+                                {% if details.Disease_symptoms_6 != NULL %}
+                                <li>{{details.Disease_symptoms_6|safe}}</li>
+                                {% endif %}
+                                {% if details.Disease_symptoms_7 != NULL %}
+                                <li>{{details.Disease_symptoms_7|safe}}</li>
+                                {% endif %}
+                                {% if details.Disease_symptoms_8 != NULL %}
+                                <li>{{details.Disease_symptoms_8|safe}}</li>
+                                {% endif %}
+                                {% if details.Disease_symptoms_9 != NULL %}
+                                <li>{{details.Disease_symptoms_9|safe}}</li>
+                                {% endif %}
+                                {% if details.Disease_symptoms_10 != NULL %}
+                                <li>{{details.Disease_symptoms_10 |safe}}</li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                        <div class="col-lg-12">
+                            {% if details.fourth_title != NULL %}
+                            <h2 class="ddsc_h py-2">
+                                {{details.fourth_title |safe}}
+                            </h2>
+                        </div>
+                        <div class="col-lg-6">
+                        {% endif %}
+                        {% if details.fourth_content != NULL %}
+                        <p class="ddsc_p">
+                            {{details.fourth_content |safe}}
+                        </p>
+                        {% endif %}
+                        </div>
+                        <div class="col-lg-6 pt-2 fixing">
+                            {% if details.department_image != NULL %}
+                            <img src="/media/{{details.department_image}}" alt="department">
+                            {% endif %}
+                        </div>
+                        <div class="col-lg-12 pt-4">
+                            {% if details.fiveth_title != NULL %}
+                            <h2 class="ddsc_h py-2">
+                                {{details.fiveth_title |safe}}
+                            </h2>
+                            {% endif %}
+
+                            {% if details.fiveth_content != NULL %}
+                            <p class="ddsc_p">
+                                {{details.fiveth_content | safe}}
+                            </p>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3">
+                    <div class="dds_menu pb-3">
+                        <h4 class="dds_menu_h p-3 bg-primary">Select Departments</h4>
+                        <ul class="nav d-flex flex-column">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <i class="fa-solid fa-angles-right"></i> 
+                                    Dental
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <i class="fa-solid fa-angles-right"></i> 
+                                    medicine
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <i class="fa-solid fa-angles-right"></i>
+                                    Orthopedics
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <i class="fa-solid fa-angles-right"></i> 
+                                    Neurosciences
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <i class="fa-solid fa-angles-right"></i>
+                                    Gastroenterology
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <i class="fa-solid fa-angles-right"></i>
+                                    Orthopedics
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <i class="fa-solid fa-angles-right"></i> 
+                                    Neurosciences
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <i class="fa-solid fa-angles-right"></i>
+                                    Gastroenterology
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--appointment button section-->
+    <section class="appointment_button_section">
+        <div class="container py-5">
+            <div class="row py-4">
+                <div class="col-lg-8">
+                    <h2 class="appointment_btn_title">Knock us out today to get medical services</h2>
+                </div>
+                <div class="col-lg-4">
+                    <a href="{% url 'appointment' %}" class="btn btn-dark w-100">Book an Appointment</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--appointment button section end-->
+  </main>
+{% endblock content %}
+

@@ -1,0 +1,515 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<main>
+    <!--slider-->
+    <div class="carousel__sliders">
+        <div class="inner__carousel">
+            <div class="carousel__item">
+                <div class="owl-carousel owl-theme" id="carousel__sliders_owl" id="carousel__sliders_owl">
+                    {% for images in slide %}
+                    <div class="item">
+                        {% if images.Image != NULL %}
+                        <img src="/media/{{images.Image}}" alt="slide" id="slider__Img">
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                </div>
+                {% for i in content %}
+                <div class="overlay">
+                    <div class="slider__content">
+                        <h1 class="slider__heading">{{i.slider_header|safe}}</h1>
+                        <h4 class="slider__discription">
+                            {{i.slider_description|safe}}
+                        </h4>
+                    </div>
+                    <div class="slider__button text-center d-flex justify-content-center">
+                        <a href="{% url 'about' %}" class="btn text-capitalize">{{i.button_one|safe}}</a>
+                        <a href="{% url 'department' %}" class="btn btn-2 text-capitalize">{{i.button_two|safe}}</a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>            
+        </div>
+    </div>
+    <!--slider-->
+    <!--About US-->
+    <section class="about__us py-lg-5">
+        <div class="container">
+            <div class="row"> 
+                <div class="col-lg-6">
+                    <div class="row">
+                        <div class="col-lg-7">
+                            <div class="about__us__imgbox">
+                                <img src="/media/{{about.0.about_image_one}}" alt="about-1">
+                            </div>
+                        </div>
+                        <div class="col-lg-5">
+                            <div class="about__imgContent mt-5">
+                                <h4 class="about__title mb-2">{{about.0.image_two_title|safe}}</h4>
+                                <img src="/media/{{about.0.about_image_two}}" alt="about-2">
+                            </div>
+                        </div>
+                        <div class="col-lg-12 mt-4">
+                            <div class="about__us__imgbox">
+                                <img src="/media/{{about.0.about_image_three}}" alt="about-3">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mt-5">
+                    <div class="about__contentbox">
+                        <h4 class="title__infa">{{about.0.header_description|safe}}</h4>
+                        <h2 class="title_about mb-4">{{about.0.about_header|safe}}</h2>
+                        <p class="lead justify-content-center mb-3">
+                            {{about.0.header_paragraph|safe}}
+                        </p>
+                    </div>
+                    <div class="row icon__content">
+                        {% for service in about %}
+                        <div class="col-lg-6">
+                            <span class="about__icon">
+                                <i class="{{service.about_services_icon}}"></i>
+                            </span>
+                            <h4 class="about__icon_title">{{service.about_services_header|safe}}</h4>
+                            <p class="lead justify-content-center">
+                                {{service.about_services_paragraph|safe}}
+                            </p>
+                        </div>               
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--About US-->
+    <!--Departments-->
+    <section class="Departments__section bg-light py-lg-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="Departments__titles text-center w-75 m-auto mb-5 pb-5">
+                        <h4 class="Departments__info w-25 text-center m-auto mb-4">{{department.0.department_description|safe}}</h4>
+                        <h2 class="departments__heading_info">{{department.0.department_header|safe}}</h2>
+                    </div>
+                </div>
+                {% for card in department %}
+                <div class="col-lg-3 mb-4">
+                    <div class="department__items">
+                        <div class="department__item_box position-relative rounded">
+                            <div class="department__img position-relative ">
+                                {% if card.department_image != NULL %}
+                                <img src="/media/{{card.department_image}}" alt="department">
+                                {% endif %}
+                                <div class="department_img_content position-absolute bottom-0 px-4 pt-5">
+                                    <h4 class="department__img_title">{{card.department_image_title|safe}}</h4>
+                                    <p class="lead">
+                                        {{card.department_image_paragraph|safe}}
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="department_img_layar position-absolute position-relative top-0 px-4">
+                                <div class="logo__box position-absolute">
+                                    {% if card.department_image != NULL %}
+                                    <img src="/media/{{card.department_icon_image}}" alt="department" class="department__logo">
+                                    {% endif %}
+                                </div>
+                                <h4 class="department__img_title">{{card.department_icon_title|safe}}</h4>
+                                <p class="lead">
+                                    {{card.department_icon_paragraph|safe}}
+                                </p>
+                                <a href="#" class="btn btn-dark">{{card.department_details_button|safe}}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="Departments__section_pagination">
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination">
+                      {% if department.has_previous %}
+                      <li class="page-item"><a class="page-link" href="?page={{ department.previous_page_number }}">Previous</a></li>
+                      {% endif %}
+
+                        {% for n in count_page  %}
+                      <li class="page-item"><a class="page-link" href="?page={{n}}">{{n}}</a></li>
+                        {% endfor %}
+
+                      {% if department.has_next %}
+                      <li class="page-item"><a class="page-link" href="?page={{ department.next_page_number }}">Next</a></li>
+                      {% endif %}
+                      <li class="page-item"><a class="page-link" href="?page={{ department.paginator.num_pages  }}">Last</a></li>
+                    </ul>
+                  </nav>
+            </div>
+        </div>
+    </section>
+    <!--Departments-->
+    <!--counter__section-->
+    <section class="hospital__counter_section">
+        <div class="video__content position-relative">
+            <video autoplay muted loop id="myvideo__content">
+                <source src="/media/{{counter.0.background_video}} "type="video/mp4">
+                Your browser does not support HTML5 video.
+            </video>
+            <div class="video__content_layar position-absolute">
+                <div class="container">
+                    <div class="row counter_part justify-content-between align-items-center">
+                        {% for count in counter %}                        
+                        <div class="col-lg-3">
+                            <div class="counter_part_content text-center">
+                                <div class="counter_icon">
+                                    <span class="material-symbols-outlined">
+                                        {{count.counter_icon}}
+                                    </span>
+                                </div>
+                                <h2 class="counter_icon_title text-capitalize mt-3">{{count.counter_icon_title}}</h2>
+                                <h3 data-target="{{count.counter_value}}" class="count"></h3>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--counter__section end-->
+    <!--WHY CHOOSE US-->
+    <section class="choose__us py-5">
+        <div class="choose__Us_box">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="choose_us_box__img w-100">
+                        <img src="/media/{{chooseUS.0.choose_us_image}}" alt="choose" class="rounded-end" id="choose_us__img">
+                    </div>
+                </div>
+                <div class="col-lg-6 px-5">
+                    <div class="choose_us_box__contemt">
+                        <div class="choose__us__heading text-left mb-5">
+                            <h2 class="choose__us_title">{{chooseUS.0.choose_us_description |safe}}</h2>
+                        </div>
+                        {% for choose in chooseUS %}
+                        <button class="collapsible">
+                            <i class="{{choose.collapsible_header_icon}}" aria-hidden="true"></i> 
+                            {{choose.collapsible_header |safe}}
+                        </button>
+                        <div class="collapsible__content">
+                            <p>
+                                {{choose.collapsible_paragraph |safe}}
+                            </p>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="btn-group w-100" role="group" aria-label="Basic example">
+                        <button type="button" class="btn btn-secondary SERVICE"><i class="fa-solid fa-truck-medical"></i>24 HOURS SERVICE</button>
+                        <button type="button" class="btn btn-secondary APPOINTMENT"><i class="fa-solid fa-calendar-check"></i> ONLINE APPOINTMENT</button>
+                        <button type="button" class="btn btn-secondary PAYMENT"><i class="fa-regular fa-credit-card"></i> ONLINE PAYMENT</button>
+                        <button type="button" class="btn btn-secondary PHYSICIANS"><i class="fa-solid fa-user-doctor"></i> YOUR PHYSICIANS</button>
+                      </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--WHY CHOOSE US-->
+    <!--OUR SPECIALISTS US-->
+    <section class="specialist_section bg-light py-5">
+        <div class="container">
+            <div class="row">
+                <div class="specialist_section__titles text-center w-75 m-auto mb-5">
+                    <h4 class="specialist__info w-25 text-center m-auto mb-4">{{doctorHeader.0.header_description|safe}}</h4>
+                    <h2 class="specialist__heading_info">{{doctorHeader.0.header_title|safe}}</h2>
+                </div>
+            </div>
+            <div class="specialist__sliders">
+                <div class="specialist__sliders__items owl-carousel owl-theme position-relative" id="specialist">
+                    {% for profile in doctorProfile %}
+                    <div class="Inner__items item">
+                        <div class="specialist__slider_item_box position-relative overflow-hidden">
+                            <img src="/media/{{profile.doctor_profile}}" alt="doctor">
+                            <div class="specialist__slider_content position-absolute bg-primary w-100 opacity-75">
+                                <ul class="nav justify-content-center">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{profile.facebook_profile}}">
+                                            <i class="{{profile.facebook_icon_class}}"></i>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{profile.linkedin_profile}}">
+                                            <i class="{{profile.linkedin_icon_class}}"></i>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link " href="{{profile.whatsapp_profile}}">
+                                            <i class="{{profile.whatsapp_icon_class}}"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="specialist__details p-2">
+                                <a href="#">
+                                    <h5 class="name_doctor">{{profile.doctor_name}}</h5>
+                                    <span class="sector_name">{{profile.specialist}}</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--OUR SPECIALISTS US-->
+    <!--appointment__section -->
+    <section class="appointment__section py-5">
+        <div class="container-fluids py-4">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="appointment__imgbox">
+                        <img src="../static/img/appointment.jpg" alt="appointment">
+                    </div>
+                </div>
+                <div class="col-lg-6 bg-primary p-5">
+                    <div class="appointment_form_content text-center">
+                        <h2 class="appointment_title text-capitalize"><span>Make </span>An Appointment</h2>
+                    </div>
+                    <!--form section-->
+                    {% if request.user.is_authenticated %}
+                    <form action="{% url 'index' %}" method="POST" class="row g-3 needs-validation" novalidate>
+                        {% csrf_token %}
+                        <div class="col-md-6">
+                        <label for="validationCustom01" class="form-label text-capitalize">Your name</label>
+                        <input type="text" class="form-control" name="User_name" id="validationCustom01" placeholder="Enter Your Name" required>
+                        <div class="valid-feedback">
+                          Looks good!
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <label for="validationCustom02" class="form-label text-capitalize">Phone Number</label>
+                        <input type="text" class="form-control" name="phone_number" id="validationCustom02" placeholder="017036xxxxx" required>
+                        <div class="valid-feedback">
+                            Please provide a valid Phone Number!
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <label for="validationCustom03" class="form-label text-capitalize">E-Mail</label>
+                        <input type="email" class="form-control" name="Email" id="validationCustom03" placeholder="example@mail.com" required>
+                        <div class="valid-feedback">
+                            Please provide a valid mail address!
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <label for="validationCustom04" class="form-label text-capitalize">Appointment date</label>
+                        <input type="date" class="form-control" name="appointment_date" id="validationCustom04" required>
+                        <div class="valid-feedback">
+                          Looks good!
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <label for="validationCustom05" class="form-label text-capitalize">select department</label>
+                        <select class="form-select" name="chosse_department" id="validationCustom05 DepartmentF" required>
+                          <option selected="selected" Disabled value="">---Choose Department---</option>
+                        </select>
+                        <div class="invalid-feedback">
+                          Please select a valid department!
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <label for="validationCustom06" class="form-label text-capitalize">choose doctor name</label>
+                        <select class="form-select" name="choose_doctor" id="validationCustom06 SpecialistF" required>
+                          <option selected="selected" Disabled value="">---Choose Doctor---</option>
+                        </select>
+                        <div class="invalid-feedback">
+                          Please select a valid Doctor!
+                        </div>
+                      </div>
+
+                      <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="exampleFormControlTextarea1" class="text-capitalize">Massage</label>
+                            <textarea class="form-control" name="message" id="exampleFormControlTextarea1" rows="3" placeholder=" Tell us samething about yourself..."></textarea>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <button type="Submit" class="btn btn-primary text-capitalize w-100" >Appointment</button>
+                      </div>
+                    </form>
+                    {% else %}
+                    <form action="{% url 'index' %}" method="POST" class="row g-3 needs-validation" novalidate>
+                        {% csrf_token %}
+                        <div class="col-md-6">
+                        <label for="validationCustom01" class="form-label text-capitalize">Your name</label>
+                        <input type="text" class="form-control" name="User_name" id="validationCustom01" placeholder="Enter Your Name" required>
+                        <div class="valid-feedback">
+                          Looks good!
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <label for="validationCustom02" class="form-label text-capitalize">Phone Number</label>
+                        <input type="text" class="form-control" name="phone_number" id="validationCustom02" placeholder="017036xxxxx" required>
+                        <div class="valid-feedback">
+                            Please provide a valid Phone Number!
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <label for="validationCustom03" class="form-label text-capitalize">E-Mail</label>
+                        <input type="email" class="form-control" name="Email" id="validationCustom03" placeholder="example@mail.com" required>
+                        <div class="valid-feedback">
+                            Please provide a valid mail address!
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <label for="validationCustom04" class="form-label text-capitalize">Appointment date</label>
+                        <input type="date" class="form-control" name="appointment_date" id="validationCustom04" required>
+                        <div class="valid-feedback">
+                          Looks good!
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <label for="validationCustom05" class="form-label text-capitalize">select department</label>
+                        <select class="form-select" name="chosse_department" id="validationCustom05 DepartmentF" required>
+                          <option selected="selected" Disabled value="">---Choose Department---</option>
+                        </select>
+                        <div class="invalid-feedback">
+                          Please select a valid department!
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <label for="validationCustom06" class="form-label text-capitalize">choose doctor name</label>
+                        <select class="form-select" name="choose_doctor" id="validationCustom06 SpecialistF" required>
+                          <option selected="selected" Disabled value="">---Choose Doctor---</option>
+                        </select>
+                        <div class="invalid-feedback">
+                          Please select a valid Doctor!
+                        </div>
+                      </div>
+
+                      <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="exampleFormControlTextarea1" class="text-capitalize">Massage</label>
+                            <textarea class="form-control" name="message" id="exampleFormControlTextarea1" rows="3" placeholder=" Tell us samething about yourself..."></textarea>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <span class="text-danger text-center text-capitalize m-auto">login first than appointment</span>
+                        <button type="Submit" class="btn btn-primary text-capitalize w-100" disabled>Appointment</button>
+                      </div>
+                    </form>
+
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--appointment__section end-->
+    <!--BLOG POST-->
+    <section class="blog__post_section py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="blogs__titles text-center w-75 m-auto pb-5">
+                        <h4 class="blog__info w-25 text-center m-auto mb-4 text-uppercase"><span>OUR</span> POST</h4>
+                        <h2 class="blog__heading_info">See our latest blog post</h2>
+                    </div>
+                </div>
+                {% for blogpost in blogposts %}
+                <div class="col-lg-4 mb-3">
+                    <div class="blog_post position-relative">
+                        <div class="blog_img mb-2">
+                            <a href="{% url 'blog_post_details' blogpost.slug %}">
+                                <img src="/media/{{blogpost.image}}" alt="blog">
+                            </a>
+                        </div>
+                        <div class="blog__content">
+                            <a href="{% url 'blog_post_details' blogpost.slug %}" class="blog_btn btn btn-primary mb-2">{{blogpost.blog_department}}</a>
+                            <div class="bolg_icon d-flex justify-content-between align-items-center">
+                                <a class="blog_icon_box disabled">
+                                    <span class="material-symbols-outlined">person</span>
+                                    <p>{{blogpost.author}}</p>
+                                </a>
+                                <a class="disabled">
+                                    <span class="material-symbols-outlined">calendar_month</span>
+                                    <p>{{blogpost.created_on}}</p>
+                                </a>
+                            </div>
+                            <a href="{% url 'blog_post_details' blogpost.slug %}">
+                                <h4 class="blog_title px-2 pb-3">{{blogpost.title | safe}}</h4>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <!--BLOG POST end-->
+    <!--testimonials_section-->
+    <section class="testimonials_section my-5">
+        <div class="container">
+            <div class="row testimonial_part justify-content-between align-items-center">
+                <div class="col-lg-12 bg-color py-5">
+                    <div class="testimonial_heading_part mb-5">
+                        <h4 class="blog__info w-25 text-center m-auto mb-4"><span>OUR</span> CLIENTS</h4>
+                        <h2 class="blog__heading_info text-center">Our happy clients say about us</h2>
+                    </div>
+                    <div class="testimonial_slider_part">
+                        <div class="testimonial_item_part owl-carousel owl-theme" id="testimonial_slide">
+                            <div class="testimonial_Inner__items item">
+                                <div class="testimonial_Inner__box w-50 m-auto">
+                                    <div class="img_content d-flex justify-content-start align-items-start mb-3">
+                                        <img src="../static/img/client-1.jpg" alt="blog">
+                                        <div class="img_title mt-3">
+                                            <h4 class="img_name">Ralph Gonzales</h4>
+                                            <span class="Patient">Patient</span>
+                                        </div>
+                                    </div>
+                                    <p class="testimonial_massage text-center">
+                                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed dolor deleniti magnam nostrum consequuntur velit ipsa aliquid voluptas explicabo hic, odio et incidunt, sapiente blanditiis nulla eligendi veritatis neque sit.
+                                        <span class="testimonial_icon">
+                                            <i class="fa-solid fa-quote-right"></i>
+                                        </span>
+                                    </p> 
+                                </div>
+                            </div>
+                            <div class="testimonial_Inner__items item">
+                                <div class="testimonial_Inner__box w-50 m-auto">
+                                    <div class="img_content d-flex justify-content-start align-items-start mb-3">
+                                        <img src="../static/img/logo.png" alt="blog">
+                                        <div class="img_title mt-3">
+                                            <h4 class="img_name">Abdur Rahman</h4>
+                                            <span class="Patient">Patient</span>
+                                        </div>
+                                    </div>
+                                    <p class="testimonial_massage text-center">
+                                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed dolor deleniti magnam nostrum consequuntur velit ipsa aliquid voluptas explicabo hic, odio et incidunt, sapiente blanditiis nulla eligendi veritatis neque sit.
+                                        <span class="testimonial_icon">
+                                            <i class="fa-solid fa-quote-right"></i>
+                                        </span>
+                                    </p> 
+                                </div>
+                            </div
+                        </div>
+                    </div>            
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--testimonials section end-->
+    <!--appointment button section-->
+    <section class="appointment_button_section">
+        <div class="container py-5">
+            <div class="row py-4">
+                <div class="col-lg-8">
+                    <h2 class="appointment_btn_title">Knock us out today to get medical services</h2>
+                </div>
+                <div class="col-lg-4">
+                    <a href="#" class="btn btn-dark w-100">Book an Appointment</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--appointment button section end-->
+</main>
+{% endblock content %}

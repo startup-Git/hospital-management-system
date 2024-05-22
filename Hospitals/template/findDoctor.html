@@ -1,0 +1,132 @@
+{% extends 'base.html' %}
+{% block content %}
+  <main>
+    <section class="specialist_slide_section d-flex justify-content-center">
+        <div class="specialist_ss_content d-flex justify-content-center align-items-center">
+            <h2 class="specialist_ss_title text-capitalize">Find a Doctor</h2>
+        </div>
+    </section>
+    <!--OUR SPECIALISTS US-->
+    <section class="specialist_section bg-light py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="specialist_section__titles text-center w-75 m-auto mb-5 pb-5">
+                        <h4 class="specialist__info w-50 text-center m-auto mb-4"><span>OUR</span> SPECIALISTS</h4>
+                        <h2 class="specialist__heading_info">Find a healthcare provider at Safamarwa hospital</h2>
+                    </div>
+                </div>
+                {% for profile in doctor_list %}
+                
+                <div class="col-lg-3 d-flex justify-content-center align-items-center text-center py-5">
+                    <div class="specialist_content justify-content-center align-items-center">
+                        <img src="/media/{{profile.profile}}" alt="doctor">
+                        <div class="specialist_content_box mt-5 pt-5 mb-4">
+                            <h4 class="scb_title">
+                                {{profile.name}}
+                            </h4>
+                            <span class="scb_disc">
+                                {{profile.specialist}}
+                            </span>
+                            <p>
+                                {{profile.specialist_description|slice:":90"}}
+                            </p>
+                        </div>
+                        <a class="nav-link" aria-current="page" href="{% url 'details' profile.slug %}">See More</a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="specialist_section_pagination">
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination">
+                      <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                      <li class="page-item"><a class="page-link" href="#">1</a></li>
+                      <li class="page-item"><a class="page-link" href="#">2</a></li>
+                      <li class="page-item"><a class="page-link" href="#">3</a></li>
+                      <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                    </ul>
+                  </nav>
+            </div>
+        </div>
+    </section>
+    <!--OUR SPECIALISTS US-->
+    <!--appointment__section -->
+    <section class="appointment__section py-5">
+        <div class="container-fluids py-4">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="appointment__imgbox">
+                        <img src="../static/img/appointment.jpg" alt="appointment">
+                    </div>
+                </div>
+                <div class="col-lg-6 bg-primary p-5">
+                    <div class="appointment_form_content text-center">
+                        <h2 class="appointment_title text-capitalize"><span>Make </span>An Appointment</h2>
+                    </div>
+                    <!--form section-->
+                    <form action="#" method="post" class="row g-3 needs-validation" novalidate>
+                      <div class="col-md-6">
+                        <label for="validationCustom01" class="form-label text-capitalize">Your name</label>
+                        <input type="text" class="form-control" id="validationCustom01" placeholder="Enter Your Name" required>
+                        <div class="valid-feedback">
+                          Looks good!
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <label for="validationCustom02" class="form-label text-capitalize">Phone Number</label>
+                        <input type="text" class="form-control" id="validationCustom02" placeholder="017036xxxxx" required>
+                        <div class="valid-feedback">
+                            Please provide a valid Phone Number!
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <label for="validationCustom03" class="form-label text-capitalize">E-Mail</label>
+                        <input type="email" class="form-control" id="validationCustom03" placeholder="example@mail.com" required>
+                        <div class="valid-feedback">
+                            Please provide a valid mail address!
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <label for="validationCustom04" class="form-label text-capitalize">Appointment date</label>
+                        <input type="date" class="form-control" id="validationCustom04" required>
+                        <div class="valid-feedback">
+                          Looks good!
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <label for="validationCustom05" class="form-label text-capitalize">select department</label>
+                        <select class="form-select" id="validationCustom05 DepartmentF" required>
+                          <option selected="selected" Disabled value="">---Choose Department---</option>
+                        </select>
+                        <div class="invalid-feedback">
+                          Please select a valid department!
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <label for="validationCustom06" class="form-label text-capitalize">choose doctor name</label>
+                        <select class="form-select" id="validationCustom06 SpecialistF" required>
+                          <option selected="selected" Disabled value="">---Choose Doctor---</option>
+                        </select>
+                        <div class="invalid-feedback">
+                          Please select a valid Doctor!
+                        </div>
+                      </div>
+
+                      <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="exampleFormControlTextarea1" class="text-capitalize">Massage</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder=" Tell us samething about yourself..."></textarea>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <button class="btn btn-primary text-capitalize w-100" type="submit">Appointment</button>
+                      </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--appointment__section end-->
+  </main>
+{% endblock content %}

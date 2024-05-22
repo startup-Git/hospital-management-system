@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block content %}
+  <main>
+    <!--gallery section-->
+    <section class="gallery_section d-flex justify-content-center align-items-center">
+        <div class="gs_content justify-content-center align-items-center">
+            <h2 class="gs_h text-capitalize">gallery</h2>
+        </div>
+    </section>
+    <!--gallery section end-->
+    <!--gallery Image -->
+    <section class="gallery_img_section py-5">
+        <div class="container py-5">
+            <div class="row">
+                {% for images in photo %}
+                
+                <div class="col-lg-3 mb-2">
+                    <img src="/media/{{images.image}}" alt="{{images.image_title | safe}}" class="gis_img" id="gis_img">
+                </div>
+                {% endfor %}
+
+            </div>
+            <div id="gis_Modal" class="gis_Modal">
+                <span class="close">&times;</span>
+                <img class="modal-content" id="mc_img">
+                <div id="caption"></div>
+            </div
+        </div>
+    </section>
+    <!--gallery Image end-->
+    <!--appointment button section-->
+    <section class="appointment_button_section">
+        <div class="container py-5">
+            <div class="row py-4">
+                <div class="col-lg-8">
+                    <h2 class="appointment_btn_title">Knock us out today to get medical services</h2>
+                </div>
+                <div class="col-lg-4">
+                    <a href="./appointment.html" class="btn btn-dark w-100">Book an Appointment</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--appointment button section end-->
+  </main>
+{% endblock content %}

@@ -1,0 +1,396 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+  <main>
+    <!--doctor-details__section-->
+    <section class="doctor-details__section d-flex justify-content-center">
+        <div class="doctor-details-content d-flex justify-content-center align-items-center">
+            <h2 class="ddc_layar text-capitalize">doctor-details</h2>
+        </div>
+    </section>
+    <!--doctor-details__section -->
+    <!--doctor profile section start-->
+    <section class="doctor_profile_section position-relative pt-5 mb-5">
+        <div class="container pt-5">
+            <div class="row">
+                <div class="col-lg-4 mb-1">
+                    <img src="/media/{{details.profile}}" alt="d-profile">
+                </div>
+                <div class="col-lg-8">
+                    <div class="dps_content">
+                        <h5 class="department_title position-relative mb-4">
+                            {{details.specialist}}
+                        </h5>
+                        <h2 class="department_d_name text-uppercase mb-3">
+                            {{details.name}}
+                        </h2>
+                        <strong class="department_disc lead">
+                            {{details.specialist_description|safe}}
+                        </strong>
+                        <div class="dpsc_icon mt-3">
+                            <ul class="nav justify-content-start">
+                                <li class="nav-item">
+                                    <a class="nav-link btn btn-outline-primary rounded-5" href="{{details.official_cv.url}}">
+                                        OFFICIAL CV
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="www.facebook.com">
+                                        <i class="fa-brands fa-facebook"></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="www.twitter.com">
+                                        <i class="fa-brands fa-twitter"></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="www.linkedin.com">
+                                        <i class="fa-brands fa-linkedin"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--doctor profile section end-->
+    <!--Biography_section-->
+    <section class="Biography_section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="Biography_content">
+                        <h2 class="bc_h bg-light py-3 px-5">Biography</h2>
+                        <p class="disc text-justify">
+                            {{details.Biography_content|safe}}
+                        </p>
+
+                        <div class="edu_disc py-3">
+                            <h2 class="bc_h bg-light py-3 px-5 mt-5">Education</h2>
+                            <ul>
+                                {% if details.Graduation_one != 'NULL' %}
+                                <li>
+                                    {{details.Graduation_one}}
+                                    {% if details.University_one %}
+                                    <p>
+                                        {{details.University_one}}
+                                    </p>
+                                    {% endif %}
+                                </li>
+                                {% endif %}
+
+                                {% if details.Graduation_two != NULL %}
+                                <li>
+                                    {{details.Graduation_two}}
+                                    {% if details.University_two != NULL %}
+                                    <p>
+                                        {{details.University_two}}
+                                    </p>
+                                    {% endif %}
+                                </li>
+                                {% endif %}
+
+                                {% if details.Graduation_three != NULL %}
+                                <li>
+                                    {{details.Graduation_three}}
+                                    {% if details.University_three != NULL %}
+                                    <p>
+                                        {{details.University_three}}
+                                    </p>
+                                    {% endif %}
+                                </li>
+                                {% endif %}
+
+                                {% if details.Graduation_four != NULL %}
+                                <li>
+                                    {{details.Graduation_four}}
+                                    {% if details.University_four != NULL %}
+                                    <p>
+                                        {{details.University_four}}
+                                    </p>
+                                    {% endif %}
+                                </li>
+                                {% endif %}
+
+                                {% if details.Graduation_five != NULL %}
+                                <li>
+                                    {{details.Graduation_five}}
+                                    {% if details.University_five != NULL %}
+                                    <p>
+                                        {{details.University_five}}
+                                    </p>
+                                    {% endif %}
+                                </li>
+                                {% endif %}
+
+                            </ul>
+                        </div>
+                        <div class="edu_disc py-3">
+                            <h2 class="bc_h bg-light py-3 px-5 mt-5">Employment</h2>
+                            <ul>
+                                {% if details.Employe_one != NULL %}
+                                <li>
+                                    {{details.Employe_one}}
+                                    {% if details.date_one != NULL %}
+                                    <p>{{details.date_one}}</p>
+                                    {% endif %}
+                                </li>
+                                {% endif %}
+
+                                {% if details.Employe_two != NULL %}
+                                <li>
+                                    {{details.Employe_two}}
+                                    {% if details.date_two != NULL %}
+                                    <p>{{details.date_two}}</p>
+                                    {% endif %}
+                                </li>
+                                {% endif %}
+
+                                {% if details.Employe_three != NULL %}
+                                <li>
+                                    {{details.Employe_three}}
+                                    {% if details.date_three != NULL %}
+                                    <p>{{details.date_three}}</p>
+                                    {% endif %}
+                                </li>
+                                {% endif %}
+
+                                {% if details.Employe_four != NULL %}
+                                <li>
+                                    {{details.Employe_four}}
+                                    {% if details.date_four != NULL %}
+                                    <p>{{details.date_four}}</p>
+                                    {% endif %}
+                                </li>
+                                {% endif %}
+
+                                {% if details.Employe_five != NULL %}
+                                <li>
+                                    {{details.Employe_five}}
+                                    {% if details.date_five != NULL %}
+                                    <p>{{details.date_five}}</p>
+                                    {% endif %}
+                                </li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                        <div class="memberships_disc">
+                            <h2 class="bc_h bg-light py-3 px-5 mb-4">Memberships</h2>
+                            <ul>
+                                {% if details.Membership_one != NULL %}
+                                <li>
+                                    {{details.Membership_one}}
+                                </li>
+                                {% endif %}
+
+                                {% if details.Membership_two != NULL %}
+                                <li>
+                                    {{details.Membership_two}}
+                                </li>
+                                {% endif %}
+
+                                {% if details.Membership_three != NULL %}
+                                <li>
+                                    {{details.Membership_three}}
+                                </li>
+                                {% endif %}
+
+                                {% if details.Membership_four != NULL %}
+                                <li>
+                                    {{details.Membership_four}}
+                                </li>
+                                {% endif %}
+
+                                {% if details.Membership_five != NULL %}
+                                <li>
+                                    {{details.Membership_five}}
+                                </li>
+                                {% endif %}
+
+                                {% if details.Membership_six != NULL %}
+                                <li>
+                                    {{details.Membership_six}}
+                                </li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="bs_rightSide_c pb-3 mb-5">
+                        <h3 class="bsrc_h py-3 px-4 bg-primary mb-4 text-capitalize">Appointment Time</h3>
+                        <ul>
+                            {% if details.Saturday != NULL %}
+                            <li>
+                                {{details.Saturday}}
+                                {% if details.Saturday_time != NULL %}
+                                <span>{{details.Saturday_time}}</span>
+                                {% endif %}
+                            </li>
+                            {% endif %}
+
+                            {% if details.Sunday != NULL %}
+                            <li>
+                                {{details.Sunday}} 
+                                {% if details.Sunday_time != NULL %}
+                                <span>{{details.Sunday_time}}</span>
+                                {% endif %}
+                            </li>
+                            {% endif %}
+
+                            {% if details.Monday != NULL %}
+                            <li>
+                                {{details.Monday}}
+                                {% if details.Monday_time != NULL %}
+                                <span>{{details.Monday_time}}</span>
+                                {% endif %}
+                            </li>
+                            {% endif %}
+
+                            {% if details.Tuesday != NULL %}
+                            <li>
+                                {{details.Tuesday}} 
+                                {% if details.Tuesday_time != NULL %}
+                                <span>{{details.Tuesday_time}}</span>
+                                {% endif %}
+                            </li>
+                            {% endif %}
+
+                            {% if details.Wednesday != NULL %}
+                            <li>
+                                {{details.Wednesday}}
+                                {% if details.Wednesday_time != NULL %}
+                                <span>{{details.Wednesday_time}}</span>
+                                {% endif %}
+                            </li>
+                            {% endif %}
+
+                            {% if details.Thursday != NULL %}
+                            <li>
+                                {{details.Thursday}}
+                                {% if details.Thursday_time != NULL %}
+                                <span>{{details.Thursday_time}}</span>
+                                {% endif %}
+                            </li>
+                            {% endif %}
+                            
+                            {% if details.Friday != NULL %}
+                            <li>
+                                {{details.Friday}}
+                                {% if details.Friday_time != NULL %}
+                                <span>{{details.Friday_time}}</span>
+                                {% endif %}
+                            </li>
+                            {% endif %}
+                        </ul>
+                        <a href="{% url 'appointment' %}" class="btn btn-outline-primary rounded-5 text-center d-flex justify-content-center align-items-center m-auto w-75">Appointment</a>
+                    </div>
+                    <div class="bs_rightSide_c pb-3 mb-5">
+                        <h3 class="bsrc_h py-3 px-3 bg-primary mb-4 text-capitalize">Write A Review</h3>
+                        <div class="bsrc_box px-3">
+                            <div class="bsrcb_img d-flex gap-4 mb-4">
+                                <img src="/media/{{details.profile}}" alt="d-profile">
+                                <div class="bsrci_c mt-4 pt-2">
+                                    <h5 class="bsrcic_h text-capitalize fs-6">
+                                        {{details.name}}
+                                    </h5>
+                                    <span class="lead">
+                                        {{details.specialist}}
+                                    </span>
+                                </div>
+                            </div>
+
+                            <form action="{% url 'doctor' %}" method="POST" id="Review">
+                                {% csrf_token %}
+                                <div class="dr_input_s card">
+                                    <h5 class="form-label w-100 px-3 py-3">Overall provider rating</h5>
+                                    <textarea class="form-control" name="messages" id="dr_input_s" rows="5" placeholder="How was your visit with a doctor?"></textarea>
+                                </div>
+                                <div class="form-group my-3">
+                                    <input type="text" class="form-control drim_s mb-1" name="user_name" id="user_name" placeholder="Enter Your Name">
+                                    <input type="email" class="form-control drim_s" name="user_mail" id="user_mail" placeholder="example@mail.com">
+                                </div>
+                                <button type="Submit" class="btn btn-outline-primary rounded-5 text-center d-flex justify-content-center align-items-center m-auto w-75 text-capitalize">Submit review</button>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Biography_section end-->
+    <!--appointment button section-->
+    <section class="appointment_button_section">
+        <div class="container py-5">
+            <div class="row py-4">
+                <div class="col-lg-8">
+                    <h2 class="appointment_btn_title">Knock us out today to get medical services</h2>
+                </div>
+                <div class="col-lg-4">
+                    <a href="{% url 'appointment' %}" class="btn btn-dark w-100">Book an Appointment</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--appointment button section end-->
+    <!--testimonials_section-->
+    <section class="d_testimonials_section testimonials_section">
+            <div class="container">
+                <div class="row testimonial_part justify-content-between align-items-center">
+                    <div class="col-lg-12 bg-color py-5">
+                        <div class="d_testimonial_heading_part mb-5">
+                            <h5 class="blog__infos w-25 text-center m-auto mb-4"><span>A word from</span> our patients</h5>
+                            <h2 class="blog__heading_info text-center text-lowercase">WHAT DO OUR CLIENTS SAY</h2>
+                        </div>
+                        <div class="testimonial_slider_part">
+                            <div class="testimonial_item_part owl-carousel owl-theme" id="doctor_client">
+
+                                <div class="testimonial_Inner__items item">
+                                    <div class="testimonial_Inner__box w-50 m-auto">
+                                        <div class="img_content d-flex justify-content-start align-items-start mb-3">
+                                            <img src="{% static '/img/user.png' %}" alt="Patient">
+                                            <div class="img_title mt-3">
+                                                <h4 class="img_name">Ralph Gonzales</h4>
+                                                <span class="Patient">Patient</span>
+                                            </div>
+                                        </div>
+                                        <p class="testimonial_massage text-center">
+                                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed dolor deleniti magnam nostrum consequuntur velit ipsa aliquid voluptas explicabo hic, odio et incidunt, sapiente blanditiis nulla eligendi veritatis neque sit.
+                                            <span class="testimonial_icon">
+                                                <i class="fa-solid fa-quote-right"></i>
+                                            </span>
+                                        </p> 
+                                    </div>
+                                </div>
+
+                                <div class="testimonial_Inner__items item">
+                                    <div class="testimonial_Inner__box w-50 m-auto">
+                                        <div class="img_content d-flex justify-content-start align-items-start mb-3">
+                                            <img src="{% static '/img/user.png' %}" alt="Patient">
+                                            <div class="img_title mt-3">
+                                                <h4 class="img_name">Abdur Rahman</h4>
+                                                <span class="Patient">Patient</span>
+                                            </div>
+                                        </div>
+                                        <p class="testimonial_massage text-center">
+                                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed dolor deleniti magnam nostrum consequuntur velit ipsa aliquid voluptas explicabo hic, odio et incidunt, sapiente blanditiis nulla eligendi veritatis neque sit.
+                                            <span class="testimonial_icon">
+                                                <i class="fa-solid fa-quote-right"></i>
+                                            </span>
+                                        </p> 
+                                    </div>
+                                </div
+                            </div>
+                        </div>            
+                    </div>
+                </div>
+            </div>
+    </section>
+    <!--testimonials section end-->
+    
+  </main>
+{% endblock content %}

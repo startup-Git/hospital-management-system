@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+  <main>
+    <!--department_slide-->
+    <section class="department_slide d-flex justify-content-center">
+        <div class="department_layar d-flex justify-content-center align-items-center">
+            <h2 class="departments text-capitalize">departments</h2>
+        </div>
+    </section>
+    <!--department_slide-->
+    <!--Departments-->
+    <section class="Departments__section bg-light py-lg-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="Departments__titles text-center w-75 m-auto mb-5 pb-5">
+                        <h4 class="Departments__info w-25 text-center m-auto mb-4"><span>OUR</span> DEPARTMENT</h4>
+                        <h2 class="departments__heading_info">Our hospital has all kinds of departments, so you can get all kinds of treatment</h2>
+                    </div>
+                </div>
+                {% for profiles in profile %}
+                <div class="col-lg-3 mb-4">
+                    <div class="department__items">
+                        <div class="department__item_box position-relative rounded">
+                            <div class="department__img position-relative ">
+                                <img src="/media/{{profiles.department_image}}" alt="department">
+                                <div class="department_img_content position-absolute bottom-0 px-4 pt-5">
+                                    <h4 class="department__img_title">{{profiles.department_name}}</h4>
+                                    <p class="lead">
+                                        {{profiles.First_content|slice:":90" | safe}}
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="department_img_layar position-absolute position-relative top-0 px-4 text-light">
+                                <div class="logo__box position-absolute">
+                                    <img src="/media/{{profiles.Hospital_logo}}" alt="department" class="department__logo">
+                                </div>
+                                <h4 class="department__img_title">
+                                    {{profiles.department_name}}
+                                </h4>
+                                <p class="lead">
+                                    {{profiles.First_content|slice:":100" | safe}}
+                                </p>
+                                <a href="{% url 'departmentDetails' profiles.slug %}" class="btn btn-dark">see more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="Departments__section_pagination">
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination">
+                      <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                      <li class="page-item"><a class="page-link" href="#">1</a></li>
+                      <li class="page-item"><a class="page-link" href="#">2</a></li>
+                      <li class="page-item"><a class="page-link" href="#">3</a></li>
+                      <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                    </ul>
+                  </nav>
+            </div>
+        </div>
+    </section>
+    <!--Departments-->
+    <!--appointment button section-->
+    <section class="appointment_button_section">
+        <div class="container py-5">
+            <div class="row py-4">
+                <div class="col-lg-8">
+                    <h2 class="appointment_btn_title">Knock us out today to get medical services</h2>
+                </div>
+                <div class="col-lg-4">
+                    <a href="{% url 'appointment' %}" class="btn btn-dark w-100">Book an Appointment</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--appointment button section end-->
+  </main>
+{% endblock content %}

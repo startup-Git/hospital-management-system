@@ -1,0 +1,28 @@
+/* 
+    Developer: Abdur Rahman Roky
+    E-Mail: mdroky2016s.s.c@gmail.com
+*/
+
+/* specialist_slide_section */
+.Blog_slide_section{
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.9)), url(../img/testimonials.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 400px;
+}
+.Blog_slide_section .Blog_ss_content .Blog_ss_title{
+    color: #fff;
+    position: relative;
+}
+.Blog_slide_section .Blog_ss_content .Blog_ss_title::after {
+    content: 'Blog';
+    position: absolute;
+    bottom: 1px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    filter: blur(15px);
+}
+/* specialist_slide_section end*/

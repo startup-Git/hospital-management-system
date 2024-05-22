@@ -1,0 +1,278 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+  <main>
+    <!--about location-->
+    <section class="abouts__section d-flex justify-content-center">
+        <div class="about_us_p d-flex justify-content-center align-items-center">
+            <h2 class="au_layar text-capitalize">About Us</h2>
+        </div>
+    </section>
+    <!--about location-->
+    <!--About US-->
+    <section class="about__us py-lg-5">
+        <div class="container">
+            <div class="row"> 
+                <div class="col-lg-6">
+                    <div class="row">
+                        <div class="col-lg-7">
+                            <div class="about__us__imgbox">
+                                <img src="/media/{{about.0.about_image_one}}" alt="about-1">
+                            </div>
+                        </div>
+                        <div class="col-lg-5">
+                            <div class="about__imgContent mt-5">
+                                <h4 class="about__title mb-2">{{about.0.image_two_title|safe}}</h4>
+                                <img src="/media/{{about.0.about_image_two}}" alt="about-2">
+                            </div>
+                        </div>
+                        <div class="col-lg-12 mt-4">
+                            <div class="about__us__imgbox">
+                                <img src="/media/{{about.0.about_image_three}}" alt="about-3">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mt-5">
+                    <div class="about__contentbox">
+                        <h4 class="title__infa">{{about.0.header_description|safe}}</h4>
+                        <h2 class="title_about mb-4">{{about.0.about_header|safe}}</h2>
+                        <p class="lead justify-content-center mb-3">
+                            {{about.0.header_paragraph|safe}}
+                        </p>
+                    </div>
+                    <div class="row icon__content">
+                        {% for service in about %}
+                        <div class="col-lg-6">
+                            <span class="about__icon">
+                                <i class="{{service.about_services_icon}}"></i>
+                            </span>
+                            <h4 class="about__icon_title">{{service.about_services_header|safe}}</h4>
+                            <p class="lead justify-content-center">
+                                {{service.about_services_paragraph|safe}}
+                            </p>
+                        </div>               
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--About US-->
+    <!--counter__section-->
+    <section class="hospital__counter_section position-relative">
+        <div class="video__content">
+            <video autoplay muted loop id="myvideo__content">
+                <source src="/media/{{counter.0.background_video}}" type="video/mp4">
+                Your browser does not support HTML5 video.
+            </video>
+        </div>
+        <div class="video__content_layar position-absolute">
+            <div class="container">
+                <div class="row counter_part justify-content-between align-items-center">
+                    {% for count in counter %}                        
+                    <div class="col-lg-3">
+                        <div class="counter_part_content text-center">
+                            <div class="counter_icon">
+                                <span class="material-symbols-outlined">
+                                    {{count.counter_icon}}
+                                </span>
+                            </div>
+                            <h2 class="counter_icon_title text-capitalize mt-3">{{count.counter_icon_title}}</h2>
+                            <h3 data-target="{{count.counter_value}}" class="count"></h3>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div> 
+            </div>
+        </div>
+
+    </section>
+    <!--counter__section end-->
+    <!--vission_mission-->
+    <section class="vission_mission_section py-5 bg-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 py-3 px-3 bg-primary">
+                        <div class="vm_content">
+                            <h4 class="vm_heading text-capitalize">
+                                {{missionVission.0.title | safe}}
+                            </h4>
+                            <p class="vm_disc">
+                                {{missionVission.0.content | safe}}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 py-3 px-3 bg-dark text-white">
+                        <div class="vm_content">
+                            <h4 class="vm_heading text-capitalize">
+                                {{missionVission.1.title |safe}}
+                            </h4>
+                            <p class="vm_disc text-white">
+                                {{missionVission.1.content |safe}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <!--vission_mission end-->
+    <!--WHY CHOOSE US-->
+    <section class="choose__us py-5">
+        <div class="choose__Us_box">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="choose_us_box__img w-100">
+                        <img src="/media/{{chooseUS.0.choose_us_image}}" alt="choose" class="rounded-end" id="choose_us__img">
+                    </div>
+                </div>
+                <div class="col-lg-6 px-5">
+                    <div class="choose_us_box__contemt">
+                        <div class="choose__us__heading text-left mb-5">
+                            <h2 class="choose__us_title">{{chooseUS.0.choose_us_description |safe}}</h2>
+                        </div>
+                        {% for choose in chooseUS %}
+                        <button class="collapsible">
+                            <i class="{{choose.collapsible_header_icon}}" aria-hidden="true"></i> 
+                            {{choose.collapsible_header | safe}}
+                        </button>
+                        <div class="collapsible__content">
+                            <p>
+                                {{choose.collapsible_paragraph |safe}}
+                            </p>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="btn-group w-100" role="group" aria-label="Basic example">
+                        <button type="button" class="btn btn-secondary SERVICE"><i class="fa-solid fa-truck-medical"></i>24 HOURS SERVICE</button>
+                        <button type="button" class="btn btn-secondary APPOINTMENT"><i class="fa-solid fa-calendar-check"></i> ONLINE APPOINTMENT</button>
+                        <button type="button" class="btn btn-secondary PAYMENT"><i class="fa-regular fa-credit-card"></i> ONLINE PAYMENT</button>
+                        <button type="button" class="btn btn-secondary PHYSICIANS"><i class="fa-solid fa-user-doctor"></i> YOUR PHYSICIANS</button>
+                      </div>
+                </div>
+            </div>
+        </div>
+    </section>>
+    <!--WHY CHOOSE US-->
+    <section class="hospital_part_section bg-light py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9">
+                    {% for i in AboutDesc %}
+                    <div class="hps_content mb-5">
+                        <h2 class="hps_title">
+                            {{i.title | safe}}
+                        </h2>
+                        <p class="hps_disc">
+                            {{i.content |safe}}
+                        </p>
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="col-lg-3">
+                    <div class="hps_imgbox pb-5">
+                        <img src="/media/{{AboutAside.0.image}}" alt="hospital">
+                        <div class="hps_imgbox_disc p-4">
+                            <h5 class="hps_ibd_h text-capitalize text-primary">
+                                {{AboutAside.0.image_title |safe}}
+                            </h5>
+                            <span class="hps_ibd_d d-block">
+                                {{AboutAside.0.address |safe}}
+                            </span>
+                            <span class="hps_ibd_d d-block mb-3">
+                                <strong>Phone: </strong> <a href="{{AboutAside.0.phone_link}}">
+                                    {{AboutAside.0.phone}}
+                                </a>
+                            </span>
+                            <a href="{% url 'appointment' %}" class="btn btn-outline-primary rounded-5 w-100">
+                                {{AboutAside.0.button}}
+                            </a>
+                        </div>
+                    </div>
+                    <div class="hps_imgbox pb-5">
+                        <h3 class="hps_ibd_h text-capitalize mb-4">Our location</h3>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14612.006912372537!2d90.41714214837779!3d23.711632327999414!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b9cc7d566d03%3A0x2472a49ac0504cd2!2sJatra%20Bari%2C%20Dhaka!5e0!3m2!1sen!2sbd!4v1665401820021!5m2!1sen!2sbd" width="auto" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--solutions section-->
+    <section class="solutions_section py-5">
+            <div class="container">
+                <div class="row d-flex justify-content-center align-items-center">
+                    <div class="col-lg-12">
+                        <div class="solution_heading_content text-center mb-5">
+                            <h4 class="solution_info w-25 m-auto mb-4"><span>SOLU</span>TION</h4>
+                            <h2 class="si_heading">Some easy steps to get your proper solution</h2>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 align-items-center">
+                        <div class="solution_content text-center">
+                            <div class="icon position-relative mb-4">
+                                <span class="material-symbols-outlined">
+                                    group_add
+                                </span>
+                                <span class="icon_value position-absolute top-0">1</span>
+                            </div>
+                            <h4 class="sc_title">Search doctor</h4>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 align-items-center">
+                        <div class="solution_content text-center">
+                            <div class="icon position-relative mb-4">
+                                <span class="material-symbols-outlined">
+                                    fact_check
+                                </span>
+                                <span class="icon_value position-absolute top-0">2</span>
+                            </div>
+                            <h4 class="sc_title">Check doctor profile</h4>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 align-items-center">
+                        <div class="solution_content text-center">
+                            <div class="icon position-relative mb-4">
+                                <span class="material-symbols-outlined">
+                                    calendar_month
+                                </span>
+                                <span class="icon_value position-absolute top-0">3</span>
+                            </div>
+                            <h4 class="sc_title">Doctor appointment</h4>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 align-items-center">
+                        <div class="solution_content text-center">
+                            <div class="icon position-relative mb-4">
+                                <span class="material-symbols-outlined">
+                                    wb_incandescent
+                                </span>
+                                <span class="icon_value position-absolute top-0">4</span>
+                            </div>
+                            <h4 class="sc_title">Get first solution</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <!--solutions end-->
+    <section class="location_area py-5">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14612.006912372537!2d90.41714214837779!3d23.711632327999414!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b9cc7d566d03%3A0x2472a49ac0504cd2!2sJatra%20Bari%2C%20Dhaka!5e0!3m2!1sen!2sbd!4v1665401820021!5m2!1sen!2sbd" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+    <!--appointment button section-->
+    <section class="appointment_button_section">
+        <div class="container py-5">
+            <div class="row py-4">
+                <div class="col-lg-8">
+                    <h2 class="appointment_btn_title">Knock us out today to get medical services</h2>
+                </div>
+                <div class="col-lg-4">
+                    <a href="{% url 'appointment' %}" class="btn btn-dark w-100">Book an Appointment</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--appointment button section end-->
+  </main>
+{% endblock content %}

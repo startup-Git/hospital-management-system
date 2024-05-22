@@ -1,0 +1,109 @@
+/* 
+    Developer: Abdur Rahman Roky
+    E-Mail: mdroky2016s.s.c@gmail.com
+*/
+
+/* gallery_section */
+.gallery_section{
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.9)), url(../img/testimonials.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 400px;
+}
+.gs_content .gs_h{
+    color: #fff;
+    position: relative;
+}
+.gs_content .gs_h::after{
+    content: 'Gallery';
+    position: absolute;
+    bottom: 1px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    filter: blur(15px);
+}
+/* gallery_section */
+/* gallery_img_section */
+.gallery_img_section img.gis_img{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    cursor: pointer;
+    transition: .4s ease-in;
+}
+.gallery_img_section img.gis_img:hover{
+    animation: logo 1s ease-in-out;
+    opacity: 0.5;
+}
+.gis_Modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.9); 
+} 
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+  
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+.modal-content, #caption {  
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+} 
+@-webkit-keyframes zoom {
+    from {-webkit-transform:scale(0)} 
+    to {-webkit-transform:scale(1)}
+}
+  
+@keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+}
+  
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+  
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+  
+@media only screen and (max-width: 700px){
+    .modal-content {
+      width: 100%;
+    }
+}
+/* gallery_img_section end */
