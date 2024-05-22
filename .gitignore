@@ -1,0 +1,82 @@
+# Ignore Visual Studio Code settings
+.vscode/
+
+# Ignore Python virtual environments
+venv/
+env/
+ENV/
+.venv/
+
+# Ignore Python cache files
+__pycache__/
+*.py[cod]
+
+# Ignore other unnecessary files
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Ignore environment variables and other config files
+*.env
+*.env.*
+
+# Ignore logs and databases
+*.log
+*.sqlite3
+
+# Ignore Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# Ignore compiled Python files
+*.pyc
+
+# Ignore coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+
+# Ignore mypy type check result files
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Ignore PyInstaller files
+#  Usually these files are written by a python script from PyInstaller:
+#  https://pythonhosted.org/PyInstaller/
+dist/
+build/
+*.spec
+
+# Ignore distribution files
+*.egg
+*.egg-info/
+dist/
+build/
+eggs/
+parts/
+var/
+sdist/
+develop-eggs/
+.installed.cfg
+*.egg-info/
+.Python
+
+# Ignore Sphinx documentation
+docs/_build/
+
+# Ignore pytest cache
+.pytest_cache/
+
+# Ignore Flask instance folder
+instance/
+
+# Ignore local stack files
+.localstack/
