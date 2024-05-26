@@ -33,7 +33,7 @@ urlpatterns = [
     path('Newsletter/', include('Gallery.urls')),
     path('Privacy-policy/', include('Privacy.urls')),
     path('Terms-condition/', include('Condition.urls')),
-    path('accounts/', include('authentication.urls')),
+    path('', include('authentication.urls')),
 ] 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

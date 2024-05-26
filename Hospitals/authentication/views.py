@@ -1,7 +1,7 @@
 # Import necessary modules and models
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from .models import *
@@ -29,7 +29,7 @@ def login_page(request):
 		else:
 			# Log in the user and redirect to the home page upon successful login
 			login(request, user)
-			return redirect('/home/')
+			return redirect('/')
 	
 	# Render the login page template (GET request)
 	return render(request, 'login.html')
@@ -68,3 +68,8 @@ def register_page(request):
 	
 	# Render the registration page template (GET request)
 	return render(request, 'registration.html')
+
+def logout_page(request):
+    logout(request)
+    messages.success(request, 'logout Successfully')
+    return redirect('index')
