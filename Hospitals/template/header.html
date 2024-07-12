@@ -42,7 +42,7 @@
         <div class="secondary__nav bg-light">
         <div class="container">
             <div class="row ">
-                <div class="col-lg-6 left__side">
+                <div class="col-lg-4 left__side">
                     <ul class="nav customize">
                         <li class="nav-item">
                             <a class="nav-link active" href="mailto:Safamarwa@mail.com"><i class="fa-regular fa-envelope"></i>
@@ -57,7 +57,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="col-lg-4 middle__side">
+                <div class="col-lg-6 middle__side">
                     <ul class="nav justify-content-end d-gap ">
                         <li class="nav-item">
                             <a class="nav-link" href="#" aria-current="page">
@@ -76,10 +76,9 @@
                         </li>
                     </ul>
                 </div>
-                <div class="col-lg-2 nav justify-content-end right__side">
-                    <li class="nav-item">
-                        <a class="btn btn-primary" href="{% url 'appointment' %}">appointment</a>
-                    </li>
+
+                <div class="col-lg-2 right__side m-auto">
+                    <a class="btn btn-primary" href="{% url 'appointment' %}">appointment</a>
                 </div>
             </div>
         </div>
@@ -105,7 +104,7 @@
                             </li>
                             {% comment %} hightlight tag method {% endcomment %}
                             {% comment %} {% url 'doctor' as doctor %} {% endcomment %}
-                            <li class="nav-item {% if request.path == '/doctor/' %} h_active {% endif %}">
+                            <li class="nav-item {% if request.path == '/Doctor/' %} h_active {% endif %}">
                               {% comment %} <a class="nav-link" href="{{doctor}}">Find A Doctor</a> {% endcomment %}
                               <a class="nav-link" href="{% url 'doctor' %}">Find A Doctor</a>
                             </li>
@@ -122,14 +121,19 @@
                                   <a class="dropdown-item" href="{% url 'appointment' %}">appointment</a>
                                 </div>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{% url 'logout' %}">logout</a>
+
+                        </ul>
+                        <ul class="nav my-2 my-lg-0 d-flex gap-2">
+                            <li class="nav-item dropdown text-white {% if request.path == '/' %} h_active {% endif %}">
+                                <a class="nav-link dropdown-toggle disabled" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  {{user.username}}
+                                </a>
+                                <div class="dropdown-menu h-auto" aria-labelledby="navbarDropdown">
+                                  <a class="dropdown-item" href="{% url 'dashboard' %}">Dashboard</a>
+                                  <a class="dropdown-item" href="{% url 'logout' %}">logout</a>
+                                </div>
                             </li>
                         </ul>
-                        <form class="form-inline my-2 my-lg-0 d-flex gap-2" method="get">
-                            <input class="form-control search" type="search" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-outline-success" type="submit">Search</button>
-                        </form>
 
                         {% else %}
                         <ul class="nav mr-auto">
@@ -160,7 +164,12 @@
                                 </div>
                             </li>
                         </ul>
-                        <a href="{% url "login_page" %}" class="btn btn-outline-success">Login</a>
+                        <div class="form-inline my-2 my-lg-0 d-flex gap-2" method="get">
+                            <li class="nav-item {% if request.path == '/login/' %} h_active {% endif %}">
+                                <a href="{% url "login" %}" class="btn btn-outline-primary">Login</a>
+                            </li>
+                        </div>
+
                         
                         {% endif %}
                     </div>

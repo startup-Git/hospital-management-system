@@ -1,0 +1,55 @@
+/* 
+    Developer: Abdur Rahman Roky
+    E-Mail: mdroky2016s.s.c@gmail.com
+*/
+/* appointment_page_section */
+.appointment_page_section{
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.9)), url(../img/testimonials.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 400px;
+}
+.appointment_page_section .appointment_page_content .appointment_pc_h{
+    color: #fff;
+    position: relative;
+}
+.appointment_page_section .appointment_page_content .appointment_pc_h::after {
+    content: 'Appointment';
+    position: absolute;
+    bottom: 1px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    filter: blur(15px);
+}
+/* appointment_page_section end */
+/* appointment__section */
+.appointment__section{
+    background-color: #e0dfda !important;
+}
+.appointment__section .Patient_information .Patient_information_h{
+    font-style: italic;
+}
+/* appointment__section */
+/* Emergency_hotline_section */
+.Emergency_hotline_section{
+    background-image: linear-gradient(rgba(13,110,253,0.5),rgba(10,88,202,0.9));
+}
+.Emergency_hotline_section .Emergency_hs_content .Ehsc_info{
+    color: #fff;
+}
+.Emergency_hotline_section .Emergency_hs_content .Ehsc_info span{
+    color: crimson;
+}
+.Emergency_hotline_section .Emergency_hs_content .Ehsc_title{
+    color: #fff;
+    font-size: 66px;
+    font-weight: 400;
+    font-family: 'Tajawal' !important;
+}
+.Emergency_hotline_section .Emergency_hs_content .Ehsc_p{
+    color: #fff;
+}
+/* Emergency_hotline_section end */

@@ -1,0 +1,46 @@
+/* 
+    Developer: Abdur Rahman Roky
+    E-Mail: mdroky2016s.s.c@gmail.com
+*/
+/*
+Terms & Conditions,
+Privacy Policy css
+ */
+
+ /* terms_condition_section html start */
+.terms_condition_section,
+.Privacy_policy_section{
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.9)), url(../img/testimonials.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 400px;
+}
+.terms_condition_section .tcs_content .tcsc_h,
+.Privacy_policy_section .pps_content .ppsc_h{
+    color: #fff;
+}
+.terms_condition_section .tcs_content .tcsc_h::after{
+    content: 'Terms & Conditions';
+    position: absolute;
+    bottom: 1px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    filter: blur(15px);
+}
+.Privacy_policy_section .pps_content .ppsc_h::after{
+    content: 'Privacy Policy';
+    position: absolute;
+    bottom: 1px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    filter: blur(15px);
+}
+.terms_condition_roles_section .tcrsmc_p i{
+    color: crimson;
+    margin-right: 10px;
+}
+ /* terms_condition_section html end */

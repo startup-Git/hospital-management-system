@@ -20,6 +20,13 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 
+
+# Error handlers
+handler400 = 'authentication.views.custom_bad_request_view'
+handler404 = 'authentication.views.custom_page_not_found_view'
+handler500 = 'authentication.views.custom_error_view'
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('tinymce/', include('tinymce.urls')),

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<main>
+    <div class="container mt-5 py-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                {% if user.is_authenticated %}
+                <h1>Hi, Mr. {{user.username}}</h1>
+                
+                <h3>This is your home page</h3>
+                <!-- myapp/templates/myapp/home.html -->
+                <a href="{% url 'logout' %}">logout</a><br>
+                
+                <a href="{% url 'password_change' %}">change password</a><br>
+                <a href="{% url 'password_reset' %}">password reset</a><br> 
+                {% else %}
+                <h1>Hello, User!</h1>
+                <p>you have not a create accounts! Please <a href="{% url 'signup' %}">Create an Accounts</a><br> you have create already accounts 
+                <a href="{% url 'login' %}">login</a> Please. </p>
+                {% endif %}
+            </div>
+        </div>
+        
+    </div>
+</main>
+{% endblock content %}

@@ -1,0 +1,274 @@
+/* 
+    Developer: Abdur Rahman Roky
+    E-Mail: mdroky2016s.s.c@gmail.com
+*/
+/* doctor-details__section */
+.doctor-details__section{
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.9)), url(../img/testimonials.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    width: 100%;
+    height: 500px;
+}
+.doctor-details__section .doctor-details-content .ddc_layar{
+    color: #fff;
+    position: relative;
+}
+.doctor-details__section .doctor-details-content .ddc_layar::after {
+    content: 'doctor-details';
+    position: absolute;
+    bottom: 1px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    filter: blur(15px);
+}
+/* doctor-details__section end */
+
+/*
+    doctor profile section start
+*/
+.doctor_profile_section{
+    background-color: rgba(13, 110, 253, 0.19);
+}
+.doctor_profile_section::before{
+    content: '';
+    position: absolute; 
+    width: 450px;
+    height: 100%;
+    top:  0;
+    left: 0;
+    z-index: -1;
+    background-color: #0a58ca;
+    border-bottom: 4px solid #405160;
+}
+.doctor_profile_section .dps_content::before{
+    content: '';
+    position: absolute;
+    width: calc(100% - 450px);
+    height: 100%;
+    bottom:  0;
+    right: 0;
+    z-index: -1;
+    border-bottom: 4px solid #0d6efd;
+}
+.doctor_profile_section .dps_content h5.department_title{
+    color: #405160;
+}
+.doctor_profile_section .dps_content h5.department_title::after{
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 2px;
+    bottom: -8px;
+    left: 0px;
+    margin: auto;
+    background-color: crimson;
+}
+.doctor_profile_section .dps_content .department_d_name{
+    font-size: 50px;
+    color: #405160;
+}
+.doctor_profile_section .dps_content .dpsc_icon ul li a{
+    padding: 0 !important;
+}
+.doctor_profile_section .dps_content .dpsc_icon ul li a.btn{
+    padding: 5px 20px !important;
+    margin-top: 8px;
+    border: 2px solid #0a58ca;
+    background: #0a58ca;
+    color: white;
+    font-weight: 500;
+    text-transform: capitalize !important;
+}
+.doctor_profile_section .dps_content .dpsc_icon ul li a.btn:hover{
+    color: #405160;
+    border: 2px solid #0a58ca;
+    background-color: #fff;
+}
+.doctor_profile_section .dps_content .dpsc_icon ul li a i{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 2px solid transparent;
+    color: #0a58ca;
+    line-height: 46px;
+    text-align: center;
+    font-size: 30px;
+    transition: all .4s ease-out;
+}
+.doctor_profile_section .dps_content .dpsc_icon ul li a i:hover{
+    background-color: #fff;
+    border: 2px solid transparent;
+    color: crimson;
+}
+/*
+    doctor profile section end
+*/
+/* 
+    Biography_section
+*/
+.Biography_section .Biography_content .edu_disc ul{
+    list-style: none;
+    position: relative;
+}
+.Biography_section .Biography_content .edu_disc ul::before{
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 6px;
+    width: 2px;
+    height: calc(100% - 65px);
+    background-color: #0d6efd;
+}
+.Biography_section .Biography_content .edu_disc ul li::before{
+    content: "\2022";
+    color: #0d6efd;
+    font-weight: bold;
+    font-size: 30px;
+    display: inline-block; 
+    width: 1em;
+    margin-left: -1em;
+}
+.Biography_section .Biography_content .memberships_disc ul{
+    list-style: none;
+    position: relative;
+}
+.Biography_section .Biography_content .memberships_disc ul li::before{
+    content: "\2022";
+    color: #0d6efd;
+    font-weight: bold;
+    font-size: 30px;
+    display: inline-block; 
+    width: 1em;
+    margin-left: -1em;
+}
+.Biography_section .bs_rightSide_c{
+    background-color: rgba(13, 110, 253, 0.19);
+}
+.Biography_section .bs_rightSide_c .bsrc_h{
+    color: #fff;
+}
+.Biography_section .bs_rightSide_c ul{
+    list-style: none;
+}
+.Biography_section .bs_rightSide_c ul li{
+    display: block;
+    padding: 10px 0px;
+}
+.Biography_section .bs_rightSide_c ul li span{
+    float: right;
+    margin-right: 30px;
+}
+.Biography_section .bs_rightSide_c a{
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+.bs_rightSide_c .bsrc_box .bsrcb_img img{
+    width: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    padding: 5px;
+    border: 2px solid #0a58ca;
+}
+.bs_rightSide_c .bsrc_box .bsrcb_img .bsrci_c span{
+    text-transform: capitalize !important;
+    font-size: 14px;
+    font-weight: 500;
+}
+.bsrc_box .dr_input_s h5{
+    background-color: #fff;
+    margin-bottom: 0px;
+    border-bottom: 1px solid #ddd;
+}
+.bsrc_box .dr_input_s textarea{
+    border: none;
+}
+.bsrc_box .dr_input_s textarea:focus{
+    box-shadow: none;
+}
+.bsrc_box .drim_s{
+    border: none;
+}
+.bsrc_box .drim_s:focus{
+    box-shadow: none;
+}
+/* 
+Biography_section
+*/
+/* 
+testimonials_section
+*/
+.d_testimonials_section .d_testimonial_heading_part .blog__infos{
+    color: #0d6efd;
+    font-size: 18px;
+    margin-bottom: 20px;
+    position: relative;
+}
+.d_testimonials_section .d_testimonial_heading_part .blog__infos span{
+    color: crimson;
+}
+.d_testimonials_section .d_testimonial_heading_part .blog__infos::after{
+    content: '';
+    position: absolute;
+    width: 105px;
+    height: 2px;
+    bottom: -8px;
+    left: 34px;
+    margin: auto;
+    background-color: crimson;
+}
+/* 
+testimonials_section
+*//* 
+testimonials_section
+*/
+.d_testimonials_section .d_testimonial_heading_part .blog__infos{
+    color: #0d6efd;
+    font-size: 18px;
+    margin-bottom: 20px;
+    position: relative;
+}
+.d_testimonials_section .d_testimonial_heading_part .blog__infos span{
+    color: crimson;
+}
+.d_testimonials_section .d_testimonial_heading_part .blog__infos::after{
+    content: '';
+    position: absolute;
+    width: 105px;
+    height: 2px;
+    bottom: -8px;
+    left: 34px;
+    margin: auto;
+    background-color: crimson;
+}
+/* 
+testimonials_section
+*//* 
+testimonials_section
+*/
+.d_testimonials_section .d_testimonial_heading_part .blog__infos{
+    color: #0d6efd;
+    font-size: 18px;
+    margin-bottom: 20px;
+    position: relative;
+}
+.d_testimonials_section .d_testimonial_heading_part .blog__infos span{
+    color: crimson;
+}
+.d_testimonials_section .d_testimonial_heading_part .blog__infos::after{
+    content: '';
+    position: absolute;
+    width: 105px;
+    height: 2px;
+    bottom: -8px;
+    left: 34px;
+    margin: auto;
+    background-color: crimson;
+}
+/* 
+testimonials_section
+*/

@@ -1,0 +1,303 @@
+@media (min-width: 1440px){
+    .container{
+        max-width: 1400px !important;
+    }
+}
+
+
+@media (min-width: 1280px){
+    .hospital__counter_section .counter_part {
+        height: 470px;
+    }
+    
+    
+}
+@media (min-width: 1120px){
+    /* Home page responsive */
+    /* .logo a img {
+        width: 200px;
+    }
+    .headers__menu .nav-link {
+        padding: 0 8px;
+    }
+    .headers__searchbar input {
+        width: 150px;
+        transition: all .4s ease-in;
+    }
+    .headers__searchbar input:focus{
+        width: 220px;
+    } */
+    .overlay .slider__content h1.slider__heading {
+        font-size: 40px;
+    }
+    .overlay .slider__content h4.slider__discription {
+        margin: 10px auto 40px;
+        font-size: 20px;
+    }
+    .about__imgContent .about__title {
+        font-size: 18px;
+    }
+    .about__contentbox .title__infa {
+        font-size: 16px;
+    }
+    .about__us .col-lg-12.mt-4 img {
+        height: 300px;
+        object-fit: cover;
+    }
+    .about__contentbox h2.title_about.mb-4 {
+        font-size: 28px;
+    }
+    .about__us .about__icon_title {
+        font-size: 20px;
+        font-weight: 600;
+    }
+    .icon__content p {
+        margin-top: 10px;
+    }
+    .Departments__section .Departments__titles .Departments__info {
+        font-size: 16px;
+    }
+    .Departments__titles h2.departments__heading_info {
+        font-size: 28px;
+    }
+    .department_img_content h4.department__img_title {
+        font-size: 20px;
+        font-weight: 600;
+    }
+    .department_img_content p {
+        font-size: 14px;
+    }
+    .department_img_layar .department__img_title {
+        margin-top: 125px;
+        font-size: 20px;
+        font-weight: 500;
+    }
+    .department_img_layar p.lead {
+        font-size: 14px;
+        margin-top: -5px;
+    }
+    .department_img_layar a {
+        padding: 3px 35px;
+    }
+    .counter_part_content .counter_icon_title, .count {
+        font-size: 22px;
+    }
+    .hospital__counter_section .counter_part {
+        height: 420px;
+    }
+    .choose__us_title {
+        font-size: 20px;
+    }
+    .choose__us_title::after {
+        width: 100px;
+    }
+    .choose_us_box__contemt .collapsible {
+        font-size: 20px;
+    }
+    .specialist_section__titles .specialist__info,
+    .blog__post_section .blogs__titles .blog__info,
+    .testimonials_section .testimonial_heading_part .blog__info {
+        font-size: 16px;
+    }
+    .specialist_section h2.specialist__heading_info {
+        font-size: 28px;
+    }
+    .appointment_form_content .appointment_title {
+        font-size: 28px;
+    }
+    .blog__post_section h2.blog__heading_info {
+        font-size: 28px;
+    }
+    .blog__post_section .bolg_icon a p {
+        font-size: 12px;
+    }
+    .blog__content .blog_title {
+        font-size: 18px;
+        font-weight: 600;
+    }
+    .testimonials_section h2.blog__heading_info.text-center {
+        font-size: 28px;
+    }
+    .testimonials_section .testimonial_Inner__box.w-50.m-auto {
+        width: 75% !important;
+    }
+    .appointment_button_section .appointment_btn_title {
+        font-size: 28px;
+    }
+    .appointment_button_section .btn-dark {
+        font-size: 16px;
+        font-weight: 500;
+    }
+    .footer_main .footer_address_content p.footer_disc {
+        text-align: start;
+    }
+    .footer_department h3.department_heading, 
+    .footer__Helpful_Links h3.Helpful_Links_heading, 
+    .footer_Subscribe h3.footer_Subscribe_heading {
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+
+
+    /* Home page responsive */
+}
+
+
+@media (max-width: 768px){
+    #mobile_toggle {
+        display: block;
+        position: absolute;
+        top: 8px;
+        right: 0;
+    }
+    .menu_all{
+        width: 100% !important;
+    }
+    .menu_bar{
+        display: none;
+    }
+    .toggle{
+        position: relative;
+        display: block;
+    }
+    .toggle ul.nav{
+        display: block !important;
+    }
+    .toggle ul.nav .dropdown-menu{
+        position: relative !important;
+        width: 100% !important;
+    }
+    .toggle ul.nav .dropdown-content .dropdown-item{
+        width: 100% ;
+        display: block;
+    }
+    .secondary__nav.bg-secondary {
+        display: none;
+    }
+    .overlay .slider__content h1.slider__heading {
+        font-size: 28px;
+    }    
+    .overlay .slider__content h4.slider__discription {
+        margin: 10px auto 18px;
+        font-size: 16px;
+    }
+    .slider__button a {
+        padding: 3px 25px;
+    }
+    .about__us .col-lg-7{
+        width: 60%;
+    }
+    .about__us .col-lg-5{
+        width: 40%;
+    }
+    .about__imgContent .about__title {
+        font-size: 15px;
+    }
+    .row.icon__content .col-lg-6 {
+        width: 50%;
+    }
+    .hospital__counter_section .video__content video {
+        display: none;
+    }
+    .hospital__counter_section .video__content_layar {
+        position: initial !important;
+    }
+    .hospital__counter_section .video__content_layar .col-lg-3{
+        width: 50%;
+    }
+    .Departments__section .Departments__titles .Departments__info {
+        font-size: 15px !important;
+        margin-top: 20px !important;
+        width: 35% !important;
+    }
+    .Departments__titles.text-center.w-75.m-auto.mb-5.pb-5 {
+        width: 100% !important;
+    }
+    h2.departments__heading_info {
+        font-size: 25px;
+    }
+    .Departments__section .col-lg-3.mb-4 {
+        width: 50%;
+    }
+    .department_img_layar .department__img_title {
+        margin-top: 90px;
+    }
+    .choose__Us_box .btn-group, .btn-group-vertical {
+        flex-wrap: wrap;
+    }
+    .choose__Us_box .SERVICE,
+    .choose__Us_box .APPOINTMENT,
+    .choose__Us_box .PAYMENT,
+    .choose__Us_box .PHYSICIANS {
+        width: 50%;
+    }
+    .specialist_section__titles.text-center.w-75.m-auto.mb-5 {
+        width: 100% !important;
+    }
+    .specialist_section__titles .specialist__info {
+        font-size: 15px;
+        width: 36% !important;
+    }
+    h2.specialist__heading_info {
+        font-size: 24px;
+    }
+    .appointment_form_content .appointment_title {
+        font-size: 28px;
+    }
+    .blog__post_section .blogs__titles .blog__info {
+        font-size: 15px;
+    }
+    h2.blog__heading_info {
+        font-size: 24px;
+    }
+    .blog__post_section .col-lg-4.mb-3 {
+        width: 50%;
+    }
+    .bolg_icon.d-flex.justify-content-between.align-items-center {
+        flex-wrap: wrap;
+    }
+    .blog__content .blog_title {
+        font-size: 17px;
+    }
+    .testimonials_section .testimonial_heading_part .blog__info {
+        font-size: 15px;
+    }
+    .testimonial_Inner__box.w-50.m-auto {
+        width: 100% !important;
+        padding: 0 65px;
+    }
+    .testimonial_Inner__box .img_content img {
+        width: 70px;
+        height: 70px;
+    }
+    .testimonial_Inner__box .img_content .img_title .img_name {
+        font-size: 16px;
+        margin-bottom: 0;
+    }
+    .testimonial_Inner__box .img_content .img_title .Patient {
+        font-size: 14px;
+        font-weight: 500;
+    }
+    .testimonial_slider_part .testimonial_massage {
+        font-size: 15px;
+        font-weight: 400;
+    }
+    .appointment_button_section .appointment_btn_title {
+        font-size: 24px;
+    }
+    .footer_main .footer_address img {
+        width: 50%;
+        margin-bottom: 10px;
+    }
+    .footer_main span.link_footer {
+        display: block;
+        margin-bottom: 10px;
+    }
+    .footer_main span.link_footer a {
+        display: inline-flex;
+    }
+    ul.nav.justify-content-start.d-gap {
+        justify-content: center !important;
+    }
+}

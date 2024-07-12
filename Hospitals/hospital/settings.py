@@ -25,10 +25,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-x5u#vg1a6ev7w+)3=&dvp@^8xuua07q^$0t376@f6w*6+ce!8+'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -62,6 +61,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'hospital.urls'
@@ -70,7 +70,8 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [BASE_DIR, 'template',
-            os.path.join(BASE_DIR, 'template/authentication'),         
+            os.path.join(BASE_DIR, 'template/authentication'), 
+            os.path.join(BASE_DIR, 'template/ErrorPages'),        
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -83,6 +84,12 @@ TEMPLATES = [
         },
     },
 ]
+
+# Define the handlers for error pages
+handler400 = 'authentication.views.custom_bad_request_view' 
+handler404 = 'authentication.views.custom_page_not_found_view'
+handler500 = 'authentication.views.custom_error_view'
+
 
 WSGI_APPLICATION = 'hospital.wsgi.application'
 
@@ -129,22 +136,30 @@ USE_I18N = True
 
 USE_TZ = True
 
+#login url
+LOGIN_URL = 'login'
+
+# smtp
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'  # For development
+# DEFAULT_FROM_EMAIL = 'webmaster@localhost'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-STATIC_URL = 'static/'
 
 MEDIA_ROOT = BASE_DIR / 'media'
-
+MEDIA_ROOT  = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+STATIC_URL = 'static/'
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
 STATICFILES_DIRS = [
     BASE_DIR / "static",
     os.path.join(BASE_DIR, 'static'),
 ]
-MEDIA_ROOT  = os.path.join(BASE_DIR, 'media')
